@@ -3,7 +3,18 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    <!-- Fullscreen mode for mobile browsers -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <style>
+        body {
+            touch-action: none;
+        }
+    </style>
     <title>Elden Roblox World</title>
     <link rel="stylesheet" href="style.css">
     <script type="importmap">
@@ -46,6 +57,14 @@
         <div class="loader-text">WAKING_UP_IN_THE_LANDS_BETWEEN...</div>
     </div>
 
+    <script>
+        // Auto-hide address bar on mobile browsers
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                window.scrollTo(0, 1);
+            }, 100);
+        });
+    </script>
     <script type="module" src="game.js"></script>
 </body>
 

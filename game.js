@@ -334,9 +334,9 @@ class SmoothBlockyWorld {
         if (this.keys['keya']) move.x -= 1;
         if (this.keys['keyd']) move.x += 1;
 
-        // Add Joystick Input
+        // Add Joystick Input (negate x to fix inverted controls)
         if (this.joystickPos.length() > 0.1) {
-            move.x = this.joystickPos.x;
+            move.x = -this.joystickPos.x;
             move.z = this.joystickPos.y;
         }
 
