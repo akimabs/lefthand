@@ -336,7 +336,7 @@ class SmoothBlockyWorld {
 
         // Add Joystick Input (negate x to fix inverted controls)
         if (this.joystickPos.length() > 0.1) {
-            move.x = -this.joystickPos.x;
+            move.x = this.joystickPos.x;
             move.z = this.joystickPos.y;
         }
 
