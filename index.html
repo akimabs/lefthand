@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elden Roblox World</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "./three.module.js"
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <canvas id="game-canvas"></canvas>
+
+    <!-- Compass HUD ala Elden Ring -->
+    <div id="compass-container">
+        <div id="compass-mask">
+            <div id="compass-indicator">
+                <span>W</span> . . . . . . <span>NW</span> . . . . . . <span>N</span> . . . . . . <span>NE</span> . . .
+                . . . <span>E</span> . . . . . . <span>SE</span> . . . . . . <span>S</span> . . . . . . <span>SW</span>
+            </div>
+        </div>
+        <div id="compass-arrow">▲</div>
+    </div>
+
+    <div id="ui-instructions">
+        WASD to Move | Arrows to Orbit Camera | Shift to Run
+    </div>
+
+    <div id="joystick-container">
+        <div id="joystick-base">
+            <div id="joystick-handle"></div>
+        </div>
+    </div>
+
+    <div id="jump-button">JUMP</div>
+    <div id="run-button">RUN: OFF</div>
+
+    <div id="loading-screen">
+        <div class="loader-text">WAKING_UP_IN_THE_LANDS_BETWEEN...</div>
+    </div>
+
+    <script type="module" src="game.js"></script>
+</body>
+
+</html>

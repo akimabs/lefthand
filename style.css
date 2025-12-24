@@ -1,0 +1,174 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background: #222;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#game-canvas {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+#ui-instructions {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.8);
+    color: #e1b26b;
+    padding: 12px 25px;
+    border-radius: 4px;
+    font-size: 13px;
+    letter-spacing: 2px;
+    border: 1px solid #7a5e3e;
+    text-transform: uppercase;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+    transition: opacity 0.5s ease;
+}
+
+.loader-text {
+    color: #d8b43b;
+    letter-spacing: 4px;
+    font-size: 16px;
+}
+
+/* Touch Controls */
+#joystick-container {
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    width: 120px;
+    height: 120px;
+    touch-action: none;
+    z-index: 10;
+    display: none;
+    /* Only show if touch is detected */
+}
+
+#joystick-base {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.2);
+    backdrop-filter: blur(2px);
+    border: 1px solid rgba(216, 180, 59, 0.4);
+    /* Subtle Golden Ornate */
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Elden Ring Style Compass Notches */
+#joystick-base::before,
+#joystick-base::after {
+    content: '';
+    position: absolute;
+    background: rgba(216, 180, 59, 0.6);
+}
+
+#joystick-base::before {
+    width: 1px;
+    height: 10px;
+    top: -5px;
+    box-shadow: 0 110px 0 rgba(216, 180, 59, 0.6);
+}
+
+#joystick-base::after {
+    height: 1px;
+    width: 10px;
+    left: -5px;
+    box-shadow: 110px 0 0 rgba(216, 180, 59, 0.6);
+}
+
+#joystick-handle {
+    width: 32px;
+    height: 32px;
+    background: radial-gradient(circle, rgba(216, 180, 59, 0.8) 0%, rgba(122, 94, 62, 0.5) 100%);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    position: absolute;
+    transition: transform 0.05s linear;
+}
+
+#jump-button {
+    position: fixed;
+    bottom: 50px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e1b26b;
+    /* Gold text */
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 11px;
+    touch-action: none;
+    user-select: none;
+    z-index: 10;
+}
+
+#jump-button:active {
+    background: rgba(216, 180, 59, 0.2);
+    transform: scale(0.9);
+}
+
+#run-button {
+    position: fixed;
+    bottom: 130px;
+    right: 40px;
+    width: 60px;
+    height: 60px;
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(4px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    color: #e1b26b;
+    border-radius: 50%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    letter-spacing: 1px;
+    font-size: 10px;
+    touch-action: none;
+    user-select: none;
+    z-index: 10;
+    transition: all 0.2s ease;
+}
+
+#run-button.active {
+    background: rgba(216, 180, 59, 0.3);
+    border-color: #e1b26b;
+    color: #ffffff;
+}
+
+/* Adjust instructions for mobile if needed */
+@media (max-width: 768px) {
+    #ui-instructions {
+        display: none;
+    }
+}
